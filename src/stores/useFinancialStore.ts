@@ -47,7 +47,7 @@ export const getDebtRatio = (): number => {
 
 // Calculate future value projection for a given number of years
 // Now handles both lump sum growth and SIP contributions
-export const getProjection = (years: number, customGrowthRate?: number): number => {
+export const getProjection = (years: number): number => {
   const assets = useAssetsStore.getState().assets;
   let totalAssetsFV = 0;
   

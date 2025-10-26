@@ -3,7 +3,7 @@
 > Privacy-first net worth tracker for India. Track assets with SIP, manage loans with EMI, and see 30-year projections—all with AI-powered insights.
 
 [![Made with ❤️ in India](https://img.shields.io/badge/Made%20with%20%E2%9D%A4%EF%B8%8F%20in-India-orange?style=flat-square)](https://github.com)
-[![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Privacy First](https://img.shields.io/badge/Privacy-First-green?style=flat-square&logo=shield)](https://github.com)
 
@@ -67,7 +67,7 @@
 
 ## 🚀 Tech Stack
 
-- **React 18** - Modern React with hooks
+- **React 19** - Modern React with hooks
 - **TypeScript** - Type-safe code
 - **Vite** - Lightning-fast build tool
 - **Zustand** - Simple state management
