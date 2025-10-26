@@ -1,0 +1,11 @@
+/* App Component Styles */
+/* Using Inter font from index.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.rupee-rise {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}

@@ -1,0 +1,1 @@
+export { CategoryCardHeader } from './CategoryCardHeader';
