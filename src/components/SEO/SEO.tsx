@@ -15,7 +15,7 @@ export function SEO({
   keywords = 'net worth tracker, india, wealth management, SIP calculator, EMI calculator, financial planner, portfolio tracker, asset management, liability tracker',
   ogTitle,
   ogDescription,
-  ogImage = '/og-image.png'
+  ogImage = 'https://myrupeerise.netlify.app/og-image.png'
 }: SEOProps) {
   
   useEffect(() => {

@@ -34,8 +34,10 @@ export function GrowthChartCard({
 
   // Chart dimensions
   const chartHeight = 200;
+  const chartWidth = 600;
   const padding = { top: 20, right: 20, bottom: 40, left: 60 };
   const innerHeight = chartHeight - padding.top - padding.bottom;
+  const innerWidth = chartWidth - padding.left - padding.right;
 
   // Scale function
   const scaleY = (value: number) => {
@@ -46,9 +48,9 @@ export function GrowthChartCard({
   // Generate SVG path for line
   const generatePath = () => {
     const points = dataPoints.map((point, index) => {
-      const x = (index / (dataPoints.length - 1)) * 100;
-      const y = scaleY(point.value);
-      return `${index === 0 ? 'M' : 'L'} ${x}% ${y + padding.top}`;
+      const x = padding.left + (index / (dataPoints.length - 1)) * innerWidth;
+      const y = scaleY(point.value) + padding.top;
+      return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
     }).join(' ');
     return points;
   };
@@ -56,12 +58,15 @@ export function GrowthChartCard({
   // Generate area fill path
   const generateAreaPath = () => {
     const linePath = dataPoints.map((point, index) => {
-      const x = (index / (dataPoints.length - 1)) * 100;
-      const y = scaleY(point.value);
-      return `${x}% ${y + padding.top}`;
+      const x = padding.left + (index / (dataPoints.length - 1)) * innerWidth;
+      const y = scaleY(point.value) + padding.top;
+      return `${x} ${y}`;
     });
     
-    return `M 0% ${innerHeight + padding.top} L ${linePath.join(' L ')} L 100% ${innerHeight + padding.top} Z`;
+    const bottomLeft = `${padding.left} ${innerHeight + padding.top}`;
+    const bottomRight = `${padding.left + innerWidth} ${innerHeight + padding.top}`;
+    
+    return `M ${bottomLeft} L ${linePath.join(' L ')} L ${bottomRight} Z`;
   };
 
   return (
@@ -69,12 +74,18 @@ export function GrowthChartCard({
       <h3 className="text-lg font-semibold text-gray-900 mb-4">Growth Over Time</h3>
       
       <div className="relative" style={{ height: `${chartHeight}px` }}>
-        <svg width="100%" height="100%" className="overflow-visible">
+        <svg 
+          width="100%" 
+          height="100%" 
+          viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+          preserveAspectRatio="none"
+          className="overflow-visible"
+        >
           {/* Grid lines */}
           <line 
-            x1="0" 
+            x1={padding.left} 
             y1={padding.top + innerHeight / 2} 
-            x2="100%" 
+            x2={padding.left + innerWidth} 
             y2={padding.top + innerHeight / 2}
             stroke="#e5e7eb" 
             strokeWidth="1"
@@ -100,14 +111,14 @@ export function GrowthChartCard({
           
           {/* Data points */}
           {dataPoints.map((point, index) => {
-            const x = (index / (dataPoints.length - 1)) * 100;
+            const x = padding.left + (index / (dataPoints.length - 1)) * innerWidth;
             const y = scaleY(point.value) + padding.top;
             
             return (
               <g key={point.year}>
                 {/* Point circle */}
                 <circle
-                  cx={`${x}%`}
+                  cx={x}
                   cy={y}
                   r="5"
                   fill="#10b981"
@@ -117,7 +128,7 @@ export function GrowthChartCard({
                 
                 {/* Year label */}
                 <text
-                  x={`${x}%`}
+                  x={x}
                   y={chartHeight - 10}
                   textAnchor="middle"
                   className="text-xs fill-gray-600"

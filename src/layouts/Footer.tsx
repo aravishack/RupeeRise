@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react';
+import { Heart, Github, Star } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -45,9 +45,33 @@ export function Footer() {
               © {currentYear} RupeeRise. All rights reserved.
             </p>
             
-            <p className="text-sm text-gray-600 flex items-center gap-1">
-              Made with <Heart size={16} className="text-red-500 fill-current" /> for India
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-gray-600 flex items-center gap-1">
+                Made with <Heart size={16} className="text-red-500 fill-current" /> for India
+              </p>
+              
+              <a 
+                href="https://github.com/aravishack/RupeeRise" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-sm text-gray-700 hover:text-rupee-green transition-colors"
+                aria-label="View source on GitHub"
+              >
+                <Github size={18} />
+                <span className="hidden sm:inline">GitHub</span>
+              </a>
+              
+              <a 
+                href="https://github.com/aravishack/RupeeRise" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-sm text-gray-700 hover:text-yellow-500 transition-colors"
+                aria-label="Star on GitHub"
+              >
+                <Star size={16} />
+                <span className="hidden sm:inline">Star</span>
+              </a>
+            </div>
             
             <p className="text-xs text-gray-500">
               Not financial advice. Projections are estimates only.

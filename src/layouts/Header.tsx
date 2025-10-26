@@ -15,7 +15,7 @@ export function Header() {
             <img 
               src={logo} 
               alt={`${APP_NAME} Logo`}
-              className="h-12 w-24 object-fill"
+              className="h-12 w-20 md:w-24 object-fill"
             />
             <div className="flex flex-col items-start">
               <h1 className="text-2xl font-bold text-rupee-green leading-none">

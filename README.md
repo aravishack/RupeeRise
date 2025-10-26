@@ -362,8 +362,8 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/rupeerise.git
-cd rupeerise
+git clone https://github.com/aravishack/RupeeRise.git
+cd RupeeRise
 
 # Install dependencies
 npm install
@@ -426,8 +426,8 @@ See [LICENSE](LICENSE) file for details.
 
 Found a bug or have a feature request?
 
-- 🐛 **Report bugs**: [GitHub Issues](https://github.com/yourusername/rupeerise/issues)
-- 💡 **Request features**: [GitHub Discussions](https://github.com/yourusername/rupeerise/discussions)
+- 🐛 **Report bugs**: [GitHub Issues](https://github.com/aravishack/RupeeRise/issues)
+- 💡 **Request features**: [GitHub Discussions](https://github.com/aravishack/RupeeRise/discussions)
 - ⭐ **Star the repo**: If you find this useful!
 
 ---
@@ -438,6 +438,6 @@ Found a bug or have a feature request?
 
 **Track Your Wealth, Plan Your Future** 🪙
 
-[Website](https://rupeerise.com) • [Documentation](docs/) • [Changelog](CHANGELOG.md)
+[Website](https://myrupeerise.netlify.app/) • [Documentation](docs/) • [Changelog](CHANGELOG.md)
 
 </div>
